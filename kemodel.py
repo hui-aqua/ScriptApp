@@ -2,15 +2,15 @@ import sys
 import numpy as np
 
 U = float(sys.argv[1]); # inlet velocity
-print("incoming velocity is "+str(U))
+print("Incoming velocity is "+str(U)+"m/s")
 
 td=float(sys.argv[2])  #mm  twine diameter
-print("Twine diameter is "+str(td))
+print("Twine diameter is "+str(td)+"m")
 # Constant in the model
 C_u = 0.09;
 # Calculation
-
-Re = U*td*10**6;
+mu=1.307e-6   # kinematic viscosity at 10 degree
+Re = U*td/mu
 print("Reynold number is  "+ str(Re));
 I = 0.16*Re**(-0.125); # turbulence intensity. for fully developed pipe flow
 
